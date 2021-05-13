@@ -27,8 +27,6 @@ const Articles = () => {
     fetchArticles();
   }, []);
 
-  let firstArticle = articles[0];
-
   let articleList = articles.slice(1).map((article, i) => {
     return <ArticleCard article={article} i={i} />;
   });
@@ -40,7 +38,7 @@ const Articles = () => {
           {errorMessage}
         </Header>
       )}
-      <BreakingNews firstArticle={firstArticle} />
+      <BreakingNews firstArticle={articles[0]} />
       <div id='card-container' data-cy='articles-container'>
         {articleList}
       </div>
